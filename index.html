@@ -37,7 +37,7 @@
   </div>
   <!-- Header -->
   <header class="w-full sticky top-0 bg-black/60 backdrop-blur z-50 flex items-center justify-between max-w-7xl mx-auto px-4 md:px-8 py-4 md:py-6">
-    <img src="hawalabit-logo.svg" alt="HawalaBit Logo" class="h-10 w-auto" />
+    <img src="assets/hawalabit-logo.svg" alt="HawalaBit Logo" class="h-10 w-auto" />
     
     <input type="checkbox" id="nav-toggle" class="peer hidden" />
     <label for="nav-toggle" class="md:hidden cursor-pointer">
@@ -52,6 +52,8 @@
       <a href="#cta" class="block px-4 md:px-0 py-2 text-white font-semibold hover:text-blue-400 transition duration-200">Request Early Access</a>
     </nav>
   </header>
+
+  <main class="relative z-10">
 
   <!-- Hero -->
   <section class="bg-gradient-to-br from-purple-800 via-blue-800 to-indigo-900 bg-animated py-20 text-center px-4 text-white" id="hero">
@@ -130,6 +132,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="bg-[#0c0c0c] py-8 text-center text-sm text-gray-400">
     <div class="space-x-4 mb-4">
@@ -151,21 +155,25 @@
         backSpeed: 20,
         backDelay: 1000,
         startDelay: 500,
-        loop: true
+        loop: false
       };
+      document.getElementById("typed-hero").textContent = "";
       new Typed("#typed-hero", heroOptions);
 
       const observeTyped = (id) => {
         const el = document.getElementById(id);
-        if (!el) return;
+        if (!el || el.dataset.typedDone) return;
+        const text = el.textContent;
+        el.textContent = '';
         const observer = new IntersectionObserver((entries, obs) => {
           entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !el.dataset.typedDone) {
               new Typed(`#${id}`, {
-                strings: [el.textContent],
+                strings: [text],
                 typeSpeed: 50,
                 showCursor: false
               });
+              el.dataset.typedDone = 'true';
               obs.unobserve(entry.target);
             }
           });
