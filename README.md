@@ -1,6 +1,5 @@
 # HawalaBit Landing Page
+
 This repository contains a simple static landing page for **HawalaBit**, a crypto remittance and exchange platform.
 
-Open `index.html` in your browser to view the page. The design uses [Tailwind CSS](https://tailwindcss.com/) via CDN, Playfair Display and system UI fonts, and is fully responsive.
-7l1ep9-codex/build-responsive-landing-page-for-hawalabit
-Open `index.html` in your browser to view the page. The design uses [Tailwind CSS](https://tailwindcss.com/) via CDN, Playfair Display and system UI fonts, and is fully responsive.
+Open `index.html` in your browser to view the page. The design uses [Tailwind CSS](https://tailwindcss.com/) via CDN, Playfair Display for headings and system UI fonts for body text. The layout is fully responsive.
