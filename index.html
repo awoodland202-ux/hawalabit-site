@@ -6,6 +6,7 @@
   <title>HawalaBit</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
@@ -23,10 +24,20 @@
     }
   </style>
 </head>
-<body class="bg-[#0c0c0c] text-white antialiased text-base leading-relaxed">
+<body class="relative bg-[#0c0c0c] text-white antialiased text-base leading-relaxed">
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <svg class="w-full h-full opacity-5 animate-pulse" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <defs>
+        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+  </div>
   <!-- Header -->
   <header class="sticky top-0 z-20 backdrop-blur-md bg-gray-900/70 shadow md:shadow-none flex items-center justify-between max-w-7xl mx-auto px-4 md:px-8 py-4 md:py-6">
-    <img src="hawalabit-logo.svg" alt="HawalaBit Logo" class="h-10 w-auto" />
+    <img src="assets/hawalabit-logo.svg" alt="HawalaBit Logo" class="h-10 w-auto" />
     
     <input type="checkbox" id="nav-toggle" class="peer hidden" />
     <label for="nav-toggle" class="md:hidden cursor-pointer">
@@ -44,7 +55,9 @@
 
   <!-- Hero -->
   <section class="bg-gradient-to-br from-purple-800 via-blue-800 to-indigo-900 bg-animated py-20 text-center px-4 text-white" id="hero">
-    <h1 class="text-4xl md:text-6xl font-bold font-playfair">Global Money. Human Trust. Instant Access.</h1>
+    <h1 class="text-4xl md:text-6xl font-bold font-playfair">
+      <span id="typed-hero"></span>
+    </h1>
     <p class="mt-4 text-xl leading-relaxed">Send, receive, and spend across borders—without banks or delays.</p>
     <div class="mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
       <a href="#cta" class="px-8 py-3 bg-blue-600 text-white rounded-md font-semibold transition transform hover:scale-105 hover:bg-blue-700">Request Early Access</a>
@@ -80,7 +93,7 @@
   <!-- Features -->
   <section class="bg-[#0f0f0f] py-16" id="features">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="bg-black/30 border border-white/20 backdrop-blur-sm shadow-xl rounded-lg p-8">
+      <div class="bg-white/10 backdrop-blur-md border border-white/10 text-white shadow-lg rounded-lg p-8">
         <ul class="space-y-4 text-lg text-white text-opacity-90">
           <li class="flex items-start"><span class="text-green-500 mr-2">✅</span><span>Send globally, settle instantly</span></li>
           <li class="flex items-start"><span class="text-green-500 mr-2">✅</span><span>Backed by human trust and blockchain security</span></li>
@@ -93,7 +106,7 @@
   <!-- About Us -->
   <section class="py-16" id="about">
     <div class="max-w-3xl mx-auto px-4 text-center">
-      <blockquote class="text-lg text-white/80 leading-relaxed">HawalaBit brings the centuries-old hawala system into the digital world. Designed for the global Somali diaspora, it combines traditional trust networks with instant USDT transactions and borderless access.</blockquote>
+      <blockquote class="text-lg text-gray-300 leading-relaxed">HawalaBit brings the centuries-old hawala system into the digital world. Designed for the global Somali diaspora, it combines traditional trust networks with instant USDT transactions and borderless access.</blockquote>
     </div>
   </section>
 
@@ -125,5 +138,22 @@
     </div>
     <p>&copy; 2025 HawalaBit</p>
   </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const options = {
+        strings: [
+          "Global Money.",
+          "Human Trust.",
+          "Instant Access."
+        ],
+        typeSpeed: 50,
+        backSpeed: 20,
+        backDelay: 1000,
+        startDelay: 500,
+        loop: true
+      };
+      new Typed("#typed-hero", options);
+    });
+  </script>
 </body>
 </html>
