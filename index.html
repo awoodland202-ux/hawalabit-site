@@ -146,17 +146,17 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const heroOptions = {
-        strings: [
-          "Global Money.",
-          "Human Trust.",
-          "Instant Access."
-        ],
-        typeSpeed: 50,
-        backSpeed: 20,
-        backDelay: 1000,
-        startDelay: 500,
-        loop: false
-      };
+  strings: [
+    "Global Money.",
+    "Human Trust.",
+    "Instant Access."
+  ],
+  typeSpeed: 50,
+  backSpeed: 20,
+  backDelay: 1000,
+  startDelay: 500,
+  loop: true // ✅ Changed from false to true for continuous animation
+};
       document.getElementById("typed-hero").textContent = "";
       new Typed("#typed-hero", heroOptions);
 
