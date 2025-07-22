@@ -25,19 +25,19 @@
   </style>
 </head>
 <body class="relative bg-[#0c0c0c] text-white antialiased text-base leading-relaxed">
-  <div class="absolute inset-0 z-0 overflow-hidden">
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
     <svg class="w-full h-full opacity-5 animate-pulse" viewBox="0 0 100 100" preserveAspectRatio="none">
       <defs>
         <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5" />
+          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.2" />
         </pattern>
       </defs>
       <rect width="100%" height="100%" fill="url(#grid)" />
     </svg>
   </div>
   <!-- Header -->
-  <header class="sticky top-0 z-20 backdrop-blur-md bg-gray-900/70 shadow md:shadow-none flex items-center justify-between max-w-7xl mx-auto px-4 md:px-8 py-4 md:py-6">
-    <img src="assets/hawalabit-logo.svg" alt="HawalaBit Logo" class="h-10 w-auto" />
+  <header class="w-full sticky top-0 bg-black/60 backdrop-blur z-50 flex items-center justify-between max-w-7xl mx-auto px-4 md:px-8 py-4 md:py-6">
+    <img src="hawalabit-logo.svg" alt="HawalaBit Logo" class="h-10 w-auto" />
     
     <input type="checkbox" id="nav-toggle" class="peer hidden" />
     <label for="nav-toggle" class="md:hidden cursor-pointer">
@@ -46,10 +46,10 @@
       </svg>
     </label>
     <nav class="flex flex-col md:flex-row absolute md:static top-full left-0 w-full md:w-auto bg-gray-900/70 backdrop-blur-md md:bg-transparent border-t md:border-0 space-y-2 md:space-y-0 md:space-x-8 py-4 md:py-0 text-base transition-all duration-300 overflow-hidden max-h-0 opacity-0 peer-checked:max-h-96 peer-checked:opacity-100 md:opacity-100 md:max-h-none">
-      <a href="#how" class="block px-4 md:px-0 py-2 text-white hover:text-blue-400">How It Works</a>
-      <a href="#about" class="block px-4 md:px-0 py-2 text-white hover:text-blue-400">About</a>
-      <a href="#cta" class="block px-4 md:px-0 py-2 text-white hover:text-blue-400">Get Started</a>
-      <a href="#cta" class="block px-4 md:px-0 py-2 text-white font-semibold hover:text-blue-400">Request Early Access</a>
+      <a href="#how" class="block px-4 md:px-0 py-2 text-white hover:text-blue-400 transition duration-200">How It Works</a>
+      <a href="#about" class="block px-4 md:px-0 py-2 text-white hover:text-blue-400 transition duration-200">About</a>
+      <a href="#cta" class="block px-4 md:px-0 py-2 text-white hover:text-blue-400 transition duration-200">Get Started</a>
+      <a href="#cta" class="block px-4 md:px-0 py-2 text-white font-semibold hover:text-blue-400 transition duration-200">Request Early Access</a>
     </nav>
   </header>
 
@@ -68,7 +68,7 @@
   <!-- How It Works -->
   <section class="bg-gray-950 py-16" id="how">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-2xl font-semibold text-center mb-8 font-playfair text-white">How It Works</h2>
+      <h2 id="typed-how" class="section-title font-playfair text-2xl md:text-4xl text-white text-center mb-8">How It Works</h2>
       <div class="grid gap-8 md:grid-cols-4 text-center">
         <div>
           <div class="h-12 w-12 mx-auto mb-3 bg-white/10 border border-white/10 rounded-full flex items-center justify-center text-white">1</div>
@@ -93,6 +93,7 @@
   <!-- Features -->
   <section class="bg-[#0f0f0f] py-16" id="features">
     <div class="max-w-4xl mx-auto px-4">
+      <h2 id="typed-features" class="section-title font-playfair text-2xl md:text-4xl text-white text-center mb-8">Features</h2>
       <div class="bg-white/10 backdrop-blur-md border border-white/10 text-white shadow-lg rounded-lg p-8">
         <ul class="space-y-4 text-lg text-white text-opacity-90">
           <li class="flex items-start"><span class="text-green-500 mr-2">✅</span><span>Send globally, settle instantly</span></li>
@@ -113,7 +114,7 @@
   <!-- Trust -->
   <section class="py-16" id="trust">
     <div class="max-w-3xl mx-auto text-center px-4">
-      <h3 class="text-xl font-semibold font-playfair text-white">Backed by the Central Bank of Somalia</h3>
+      <h3 class="text-xl font-semibold font-playfair text-white">Aligned with Emerging National Financial Standards</h3>
       <p class="mt-2 text-white/70">Pioneered by Brock Pierce</p>
     </div>
   </section>
@@ -121,7 +122,7 @@
   <!-- Call To Action -->
   <section class="bg-gray-900 py-16" id="cta">
     <div class="max-w-xl mx-auto text-center px-4">
-      <h2 class="text-2xl md:text-3xl font-semibold font-playfair text-white">Join the future of decentralized money movement.</h2>
+      <h2 id="typed-cta" class="section-title font-playfair text-2xl md:text-4xl text-white">Join the future of decentralized money movement.</h2>
       <div class="mt-6 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
         <a href="#" class="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold transition transform hover:scale-105 hover:bg-blue-700">Request Early Access</a>
         <a href="#about" class="px-6 py-3 border border-blue-500 text-blue-500 rounded-md font-semibold transition transform hover:scale-105 hover:bg-blue-500 hover:text-white">Contact Us</a>
@@ -140,7 +141,7 @@
   </footer>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const options = {
+      const heroOptions = {
         strings: [
           "Global Money.",
           "Human Trust.",
@@ -152,7 +153,29 @@
         startDelay: 500,
         loop: true
       };
-      new Typed("#typed-hero", options);
+      new Typed("#typed-hero", heroOptions);
+
+      const observeTyped = (id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              new Typed(`#${id}`, {
+                strings: [el.textContent],
+                typeSpeed: 50,
+                showCursor: false
+              });
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.6 });
+        observer.observe(el);
+      };
+
+      observeTyped('typed-how');
+      observeTyped('typed-features');
+      observeTyped('typed-cta');
     });
   </script>
 </body>
