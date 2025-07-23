@@ -20,10 +20,12 @@ export function InteractiveGridPattern({
 
   return (
     <svg
-      width={width * horizontal}
-      height={height * vertical}
-      className={`pointer-events-none absolute inset-0 z-0 hidden md:block ${className}`}
-    >
+  width="100%"
+  height="100%"
+  viewBox={`0 0 ${size * horizontal} ${size * vertical}`}
+  preserveAspectRatio="xMidYMid slice"
+  className="w-full h-full pointer-events-none skew-y-12 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
+>
       {Array.from({ length: horizontal * vertical }).map((_, index) => {
         const x = (index % horizontal) * width;
         const y = Math.floor(index / horizontal) * height;
