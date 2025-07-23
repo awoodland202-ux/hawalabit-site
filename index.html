@@ -229,26 +229,28 @@
 
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel" data-presets="react,typescript">
-    const InteractiveGridPattern = ({ width = 40, height = 40, squares = [30, 30] }) => {
+    const InteractiveGridPattern = ({ size = 40, squares = [30, 30] }) => {
       const [hovered, setHovered] = React.useState(null);
       const [horizontal, vertical] = squares;
 
       return (
         <svg
-          width={width * horizontal}
-          height={height * vertical}
-          className="pointer-events-none absolute inset-0 z-0 hidden md:block"
+          width="100%"
+          height="100%"
+          viewBox={`0 0 ${size * horizontal} ${size * vertical}`}
+          preserveAspectRatio="xMidYMid slice"
+          className="absolute inset-0 z-0 hidden md:block w-full h-[200%] inset-y-[-30%] skew-y-12 [mask-image:radial-gradient(400px_circle_at_center,white,transparent)]"
         >
           {Array.from({ length: horizontal * vertical }).map((_, index) => {
-            const x = (index % horizontal) * width;
-            const y = Math.floor(index / horizontal) * height;
+            const x = (index % horizontal) * size;
+            const y = Math.floor(index / horizontal) * size;
             return (
               <rect
                 key={index}
                 x={x}
                 y={y}
-                width={width}
-                height={height}
+                width={size}
+                height={size}
                 className={
                   `stroke-white/10 transition-all duration-100 ease-in-out ` +
                   (hovered === index ? "fill-purple-500/10" : "fill-transparent")
@@ -264,14 +266,24 @@
   </script>
   <script type="text/babel" data-presets="react,typescript">
     document.addEventListener("DOMContentLoaded", function () {
-      if (window.innerWidth >= 768) {
-        const root = document.getElementById("grid-root");
-        if (root) {
-          ReactDOM.createRoot(root).render(
-            React.createElement(InteractiveGridPattern)
-          );
+      const mount = () => {
+        const rootEl = document.getElementById("grid-root");
+        if (!rootEl) return;
+        if (window.innerWidth >= 768) {
+          if (!rootEl._reactRoot) {
+            rootEl._reactRoot = ReactDOM.createRoot(rootEl);
+            rootEl._reactRoot.render(
+              React.createElement(InteractiveGridPattern)
+            );
+          }
+        } else if (rootEl._reactRoot) {
+          rootEl._reactRoot.unmount();
+          rootEl._reactRoot = null;
         }
-      }
+      };
+
+      mount();
+      window.addEventListener("resize", mount);
     });
   </script>
 </body>
