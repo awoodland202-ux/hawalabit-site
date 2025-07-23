@@ -29,17 +29,17 @@ export function InteractiveGridPattern({
         const y = Math.floor(index / horizontal) * height;
         return (
           <rect
-            key={index}
-            x={x}
-            y={y}
-            width={width}
-            height={height}
-            className={`stroke-white/10 transition-all duration-100 ease-in-out [&:not(:hover)]:duration-1000 ${
-              hoveredSquare === index ? "fill-purple-500/10" : "fill-transparent"
-            } ${squaresClassName}`}
-            onMouseEnter={() => setHoveredSquare(index)}
-            onMouseLeave={() => setHoveredSquare(null)}
-          />
+  key={index}
+  x={x}
+  y={y}
+  width={width}
+  height={height}
+  className={`stroke-blue-500/20 transition-all duration-100 ease-in-out [&:not(:hover)]:duration-1000 ${
+    hoveredSquare === index ? "fill-blue-500/20" : "fill-blue-500/10"
+  } ${squaresClassName}`}
+  onMouseEnter={() => setHoveredSquare(index)}
+  onMouseLeave={() => setHoveredSquare(null)}
+/>
         );
       })}
     </svg>
