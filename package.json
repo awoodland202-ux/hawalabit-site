@@ -1,0 +1,23 @@
+{
+  "name": "hawalabit-site",
+  "version": "1.0.0",
+  "description": "This repository contains the static landing page for **HawalaBit**, a Web3 remittance platform bridging crypto and the Somali diaspora economy.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awoodland202-ux/hawalabit-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/awoodland202-ux/hawalabit-site/issues"
+  },
+  "homepage": "https://github.com/awoodland202-ux/hawalabit-site#readme",
+  "devDependencies": {
+    "tailwindcss": "^4.1.11"
+  }
+}
