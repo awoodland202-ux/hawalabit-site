@@ -121,9 +121,6 @@
     });
   });
 </script>
-<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel" data-presets="react,typescript">
   const InteractiveGridPattern = ({ size = 40, squares = [30, 30] }) => {
     const [hovered, setHovered] = React.useState(null);
@@ -134,7 +131,9 @@
         height="100%"
         viewBox={`0 0 ${size * horizontal} ${size * vertical}`}
         preserveAspectRatio="xMidYMid slice"
-        className="pointer-events-none absolute inset-0 z-0 hidden md:block w-full h-[200%] inset-y-[-30%] skew-y-12 [mask-image:radial-gradient(400px_circle_at_center,white,transparent)]"
+        className="pointer-events-none w-full h-full"
+        role="presentation"
+        aria-hidden="true"
       >
         {Array.from({ length: horizontal * vertical }).map((_, index) => {
           const x = (index % horizontal) * size;
@@ -159,10 +158,11 @@
     );
   };
 </script>
+
 <script type="text/babel" data-presets="react,typescript">
   window.addEventListener("load", function () {
     const mount = () => {
-      const rootEl = document.getElementById("grid-root");
+      const rootEl = document.getElementById("svg-background");
       if (!rootEl) return;
       if (window.innerWidth >= 768) {
         if (!rootEl._reactRoot) {
