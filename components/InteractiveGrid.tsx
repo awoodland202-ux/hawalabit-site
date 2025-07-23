@@ -20,30 +20,28 @@ export function InteractiveGridPattern({
 
   return (
     <svg
-  width="100%"
-  height="100%"
-  viewBox={`0 0 ${width * horizontal} ${height * vertical}`}
-  preserveAspectRatio="xMidYMid slice"
-  className={`w-full h-full pointer-events-none ${className}`}
-  role="presentation"
-  aria-hidden="true"
->
+      width="100%"
+      height="100%"
+      viewBox={`0 0 ${width * horizontal} ${height * vertical}`}
+      preserveAspectRatio="xMidYMid slice"
+      className="w-full h-full pointer-events-auto"
+      style={{ background: "red", opacity: 1 }}
+      role="presentation"
+      aria-hidden="true"
+    >
       {Array.from({ length: horizontal * vertical }).map((_, index) => {
         const x = (index % horizontal) * width;
         const y = Math.floor(index / horizontal) * height;
         return (
           <rect
-  key={index}
-  x={x}
-  y={y}
-  width={width}
-  height={height}
-  className={`stroke-blue-500/20 transition-all duration-100 ease-in-out [&:not(:hover)]:duration-1000 ${
-    hoveredSquare === index ? "fill-blue-500/20" : "fill-blue-500/10"
-  } ${squaresClassName}`}
-  onMouseEnter={() => setHoveredSquare(index)}
-  onMouseLeave={() => setHoveredSquare(null)}
-/>
+            key={index}
+            x={x}
+            y={y}
+            width={width}
+            height={height}
+            fill="blue"
+            stroke="blue"
+          />
         );
       })}
     </svg>
