@@ -20,15 +20,15 @@ export function InteractiveGridPattern({
 
   return (
     <svg
-      width="100%"
-      height="100%"
-      viewBox={`0 0 ${width * horizontal} ${height * vertical}`}
-      preserveAspectRatio="xMidYMid slice"
-      className="w-full h-full pointer-events-auto"
-      style={{ background: "red", opacity: 1 }}
-      role="presentation"
-      aria-hidden="true"
-    >
+  width="100%"
+  height="100vh"
+  viewBox={`0 0 ${width * horizontal} ${height * vertical}`}
+  preserveAspectRatio="xMidYMid slice"
+  className="w-full pointer-events-auto"
+  style={{ background: "red", opacity: 1 }}
+  role="presentation"
+  aria-hidden="true"
+>
       {Array.from({ length: horizontal * vertical }).map((_, index) => {
         const x = (index % horizontal) * width;
         const y = Math.floor(index / horizontal) * height;
