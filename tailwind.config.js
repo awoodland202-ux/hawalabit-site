@@ -14,7 +14,8 @@ module.exports = {
       "text-gray-100", "text-gray-300", "text-gray-400", "text-opacity-90", "text-green-500",
       "text-2xl", "text-sm", "text-lg", "border-blue-500", "text-blue-500", "hover:text-white",
       "shadow-lg", "p-8", "pointer-events-none", "z-0", "md:block",
-      "stroke-white/10", "fill-transparent", "hover:fill-blue-500/10", "transition-all", "duration-100", "ease-in-out", "[&:not(:hover)]:duration-1000"
+      "stroke-white/10", "fill-transparent", "hover:fill-blue-500/10", "transition-all", "duration-100", "ease-in-out", "[&:not(:hover)]:duration-1000",
+      "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]"
     ],
     theme: {
       extend: {},
