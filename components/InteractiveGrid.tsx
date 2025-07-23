@@ -21,11 +21,11 @@ export function InteractiveGridPattern({
   return (
     <svg
   width="100%"
-  height="100vh"
+  height="800"
   viewBox={`0 0 ${width * horizontal} ${height * vertical}`}
   preserveAspectRatio="xMidYMid slice"
-  className="w-full pointer-events-auto"
-  style={{ background: "red", opacity: 1 }}
+  style={{ background: "red" }}
+  className="pointer-events-auto"
   role="presentation"
   aria-hidden="true"
 >
