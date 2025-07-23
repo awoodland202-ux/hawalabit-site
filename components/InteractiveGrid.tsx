@@ -22,7 +22,7 @@ export function InteractiveGridPattern({
     <svg
   width="100%"
   height="100%"
-  viewBox={`0 0 ${size * horizontal} ${size * vertical}`}
+  viewBox={`0 0 ${width * horizontal} ${height * vertical}`}
   preserveAspectRatio="xMidYMid slice"
   className="w-full h-full pointer-events-none"
 >
