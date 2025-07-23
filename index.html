@@ -129,40 +129,59 @@
   const InteractiveGridPattern = ({ size = 40, squares = [30, 30] }) => {
     const [hovered, setHovered] = React.useState(null);
     const [horizontal, vertical] = squares;
+
+    const totalWidth = size * horizontal;
+    const totalHeight = size * vertical;
+
     return (
       <svg
         width="100%"
         height="100%"
-        viewBox={`0 0 ${size * horizontal} ${size * vertical}`}
+        viewBox={`0 0 ${totalWidth} ${totalHeight}`}
         preserveAspectRatio="xMidYMid slice"
-        className="pointer-events-none w-full h-full"
+        style={{ pointerEvents: "none" }}
+        className="w-full h-full"
         role="presentation"
         aria-hidden="true"
       >
-        {Array.from({ length: horizontal * vertical }).map((_, index) => {
-          const x = (index % horizontal) * size;
-          const y = Math.floor(index / horizontal) * size;
-          return (
-            <rect
-  key={index}
-  x={x}
-  y={y}
-  width={size}
-  height={size}
-  fill={hovered === index ? "#3B82F6" : "transparent"}  // hover fill only
-  stroke="#3B82F6"  // solid brand blue lines
-  strokeWidth="1"
-  className="transition-all duration-200 ease-in-out"
-  onMouseEnter={() => setHovered(index)}
-  onMouseLeave={() => setHovered(null)}
-/>
-          );
-        })}
+        <defs>
+          <radialGradient id="fade" cx="50%" cy="50%" r="75%">
+            <stop offset="60%" stopColor="white" stopOpacity="1" />
+            <stop offset="100%" stopColor="white" stopOpacity="0" />
+          </radialGradient>
+          <mask id="gridMask">
+            <rect width="100%" height="100%" fill="url(#fade)" />
+          </mask>
+        </defs>
+        <g transform="skewY(8)" mask="url(#gridMask)">
+          {Array.from({ length: horizontal * vertical }).map((_, index) => {
+            const x = (index % horizontal) * size;
+            const y = Math.floor(index / horizontal) * size;
+            return (
+              <rect
+                key={index}
+                x={x}
+                y={y}
+                width={size}
+                height={size}
+                fill={hovered === index ? "#3B82F6" : "transparent"}
+                stroke="#3B82F6"
+                strokeWidth="1"
+                strokeOpacity="0.15"
+                style={{
+                  transition: "all 0.2s ease-in-out",
+                  pointerEvents: "auto",
+                }}
+                onMouseEnter={() => setHovered(index)}
+                onMouseLeave={() => setHovered(null)}
+              />
+            );
+          })}
+        </g>
       </svg>
     );
   };
 </script>
-
 <script type="text/babel" data-presets="react,typescript">
   window.addEventListener("load", function () {
     const mount = () => {
