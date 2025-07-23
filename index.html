@@ -25,16 +25,7 @@
   </style>
 </head>
 <body class="relative bg-[#0c0c0c] text-white antialiased text-base leading-relaxed">
-  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none hidden md:block">
-    <svg class="w-full h-full opacity-5 animate-pulse" viewBox="0 0 100 100" preserveAspectRatio="none">
-      <defs>
-        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.2" />
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#grid)" />
-    </svg>
-  </div>
+  <div id="grid-root"></div>
 <div class="relative z-10">
   <!-- Header (more transparent for grid visibility) -->
   <input type="checkbox" id="nav-toggle" class="peer hidden" />
@@ -231,6 +222,20 @@
           body.classList.remove('overflow-hidden');
         }
       });
+    });
+  </script>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel" data-presets="react,typescript" data-plugins="transform-modules-umd" src="components/InteractiveGrid.tsx"></script>
+  <script type="text/babel" data-presets="react,typescript">
+    document.addEventListener("DOMContentLoaded", function() {
+      if (window.innerWidth >= 768) {
+        var root = document.getElementById("grid-root");
+        if (root) {
+          ReactDOM.createRoot(root).render(React.createElement(InteractiveGridPattern));
+        }
+      }
     });
   </script>
 </body>
