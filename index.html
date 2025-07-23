@@ -265,26 +265,26 @@
     };
   </script>
   <script type="text/babel" data-presets="react,typescript">
-    document.addEventListener("DOMContentLoaded", function () {
-      const mount = () => {
-        const rootEl = document.getElementById("grid-root");
-        if (!rootEl) return;
-        if (window.innerWidth >= 768) {
-          if (!rootEl._reactRoot) {
-            rootEl._reactRoot = ReactDOM.createRoot(rootEl);
-            rootEl._reactRoot.render(
-              React.createElement(InteractiveGridPattern)
-            );
-          }
-        } else if (rootEl._reactRoot) {
-          rootEl._reactRoot.unmount();
-          rootEl._reactRoot = null;
+  window.addEventListener("load", function () {
+    const mount = () => {
+      const rootEl = document.getElementById("grid-root");
+      if (!rootEl) return;
+      if (window.innerWidth >= 768) {
+        if (!rootEl._reactRoot) {
+          rootEl._reactRoot = ReactDOM.createRoot(rootEl);
+          rootEl._reactRoot.render(
+            React.createElement(InteractiveGridPattern)
+          );
         }
-      };
+      } else if (rootEl._reactRoot) {
+        rootEl._reactRoot.unmount();
+        rootEl._reactRoot = null;
+      }
+    };
 
-      mount();
-      window.addEventListener("resize", mount);
-    });
-  </script>
+    mount();
+    window.addEventListener("resize", mount);
+  });
+</script>
 </body>
 </html>
