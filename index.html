@@ -124,6 +124,7 @@
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
 <script type="text/babel" data-presets="react,typescript">
   const InteractiveGridPattern = ({ size = 40, squares = [30, 30] }) => {
     const [hovered, setHovered] = React.useState(null);
@@ -149,8 +150,8 @@
               width={size}
               height={size}
               className={
-                "stroke-blue-500/20 transition-all duration-100 ease-in-out " +
-                (hovered === index ? "fill-blue-500/20" : "fill-blue-500/10")
+                "stroke-white/50 drop-shadow-md transition-all duration-100 ease-in-out " +
+                (hovered === index ? "fill-blue-500/90" : "fill-blue-500/60")
               }
               onMouseEnter={() => setHovered(index)}
               onMouseLeave={() => setHovered(null)}
