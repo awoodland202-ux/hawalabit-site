@@ -27,7 +27,7 @@
 <body class="relative bg-[#0c0c0c] text-white antialiased text-base leading-relaxed">
   <div id="grid-root" class="absolute inset-0 z-0 hidden md:block pointer-events-none"></div>
 <div class="relative z-10">
-  <!-- Header (more transparent for grid visibility) -->
+  <!-- Header -->
   <input type="checkbox" id="nav-toggle" class="peer hidden" />
 <header class="w-full sticky top-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 py-4 md:py-6">
@@ -38,233 +38,128 @@
   <a href="#about" class="hover:text-blue-400">About Us</a>
   <a href="#cta" class="bg-blue-600 px-4 py-2 rounded-md font-semibold hover:bg-blue-700">Request Access</a>
 </nav>
-
     <label for="nav-toggle" class="md:hidden cursor-pointer" aria-label="Toggle navigation">
-      <svg class="h-6 w-6 text-white peer-checked:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <svg class="h-6 w-6 text-white peer-checked:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
-      <svg class="h-6 w-6 text-white hidden peer-checked:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <svg class="h-6 w-6 text-white hidden peer-checked:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </label>
-
   </div>
 </header>
 
-<nav class="fixed inset-0 z-[999] bg-[#0c0c0c] text-white hidden peer-checked:flex flex-col md:hidden">
-  <img src="assets/hawalabit-logo.svg" alt="HawalaBit Logo" class="absolute top-6 left-6 h-10 w-auto md:hidden" />
-  <label for="nav-toggle" class="absolute top-6 right-6 text-white text-3xl cursor-pointer md:hidden">&times;</label>
-
-  <div class="flex flex-col items-center justify-start pt-[33vh] space-y-6 text-2xl">
-    <a href="#how" class="transition-all duration-300 delay-[50ms]">How It Works</a>
-    <a href="#features" class="transition-all duration-300 delay-[100ms]">Features</a>
-    <a href="#about" class="transition-all duration-300 delay-[150ms]">About Us</a>
-    <a href="#cta" class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:brightness-110 transition-all duration-300 delay-[200ms]">Request Access</a>
-  </div>
-</nav>
-
-
-  <main class="relative z-10">
-
-  <!-- Hero -->
-  <section class="relative isolate z-10 bg-no-grid bg-gradient-to-br from-purple-800 via-blue-800 to-indigo-900 bg-animated py-20 text-center px-4 text-white" id="hero">
+<main class="relative z-10">
+  <section class="relative isolate z-10 bg-gradient-to-br from-purple-800 via-blue-800 to-indigo-900 bg-animated py-24 text-center px-4 text-white" id="hero">
     <h1 class="text-4xl md:text-6xl font-bold font-playfair">
       <span id="typed-hero"></span>
     </h1>
     <p class="mt-4 text-xl leading-relaxed">Send, receive, and spend across borders—without banks or delays.</p>
     <div class="mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-      <a href="#cta" class="px-8 py-3 bg-blue-600 text-white rounded-md font-semibold transition transform hover:scale-105 hover:bg-blue-700">Request Early Access</a>
-      <a href="#how" class="px-8 py-3 border border-white/70 text-white rounded-md font-semibold transition transform hover:scale-105 hover:bg-white/20">How It Works</a>
+      <a href="#" class="px-8 py-3 bg-blue-600 text-white rounded-md font-semibold transition transform hover:scale-105 hover:bg-blue-700">Request Early Access</a>
+      <a href="#" class="px-8 py-3 border border-white/70 text-white rounded-md font-semibold transition transform hover:scale-105 hover:bg-white/20">How It Works</a>
     </div>
   </section>
 
-  <!-- How It Works -->
-  <section class="bg-transparent py-16" id="how">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 id="typed-how" class="section-title font-playfair text-2xl md:text-4xl text-white text-center mb-8">How It Works</h2>
-      <div class="grid gap-8 md:grid-cols-4 text-center">
-        <div>
-          <div class="h-12 w-12 mx-auto mb-3 bg-white/10 border border-white/10 rounded-full flex items-center justify-center text-white">1</div>
-          <p class="font-medium text-gray-100">Enter recipient details</p>
-        </div>
-        <div>
-          <div class="h-12 w-12 mx-auto mb-3 bg-white/10 border border-white/10 rounded-full flex items-center justify-center text-white">2</div>
-          <p class="font-medium text-gray-100">Connect your wallet / bank</p>
-        </div>
-        <div>
-          <div class="h-12 w-12 mx-auto mb-3 bg-white/10 border border-white/10 rounded-full flex items-center justify-center text-white">3</div>
-          <p class="font-medium text-gray-100">Instantly send funds</p>
-        </div>
-        <div>
-          <div class="h-12 w-12 mx-auto mb-3 bg-white/10 border border-white/10 rounded-full flex items-center justify-center text-white">4</div>
-          <p class="font-medium text-gray-100">Recipient receives local equivalent</p>
-        </div>
-      </div>
-    </div>
+  <section id="how">
+    <h2 class="font-playfair text-2xl md:text-4xl text-white text-center mb-8">How It Works</h2>
+    <ul class="text-center space-y-4">
+      <li>1. Enter recipient details</li>
+      <li>2. Connect your wallet / bank</li>
+      <li>3. Instantly send funds</li>
+      <li>4. Recipient receives local equivalent</li>
+    </ul>
   </section>
 
-  <!-- Features -->
-  <section class="bg-transparent py-16" id="features">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 id="typed-features" class="section-title font-playfair text-2xl md:text-4xl text-white text-center mb-8">Features</h2>
-      <div class="bg-white/10 backdrop-blur-md border border-white/10 text-white shadow-lg rounded-lg p-8">
-        <ul class="space-y-4 text-lg text-white text-opacity-90">
-          <li class="flex items-start"><span class="text-green-500 mr-2">✅</span><span>Send globally, settle instantly</span></li>
-          <li class="flex items-start"><span class="text-green-500 mr-2">✅</span><span>Backed by human trust and blockchain security</span></li>
-          <li class="flex items-start"><span class="text-green-500 mr-2">✅</span><span>Built for mobile-first users and global families</span></li>
-        </ul>
-      </div>
-    </div>
+  <section id="features">
+    <h2 class="font-playfair text-2xl md:text-4xl text-white text-center mb-8">Features</h2>
+    <ul class="text-lg text-white space-y-2">
+      <li>✅ Send globally, settle instantly</li>
+      <li>✅ Backed by human trust and blockchain security</li>
+      <li>✅ Built for mobile-first users and global families</li>
+    </ul>
   </section>
 
-  <!-- About Us -->
-  <section class="bg-transparent py-16" id="about">
-    <div class="max-w-3xl mx-auto px-4 text-center">
-      <blockquote class="text-lg text-gray-300 leading-relaxed">HawalaBit brings the centuries-old hawala system into the digital world. Designed for the global Somali diaspora, it combines traditional trust networks with instant USDT transactions and borderless access.</blockquote>
-    </div>
+  <section id="about">
+    <h2 class="font-playfair text-2xl md:text-4xl text-white text-center mb-8">About Us</h2>
+    <p class="text-center text-gray-300">HawalaBit brings the centuries-old hawala system into the digital world. Designed for the global Somali diaspora, it combines traditional trust networks with instant USDT transactions and borderless access.</p>
   </section>
 
-  <!-- Trust -->
-  <section class="bg-transparent py-16" id="trust">
-    <div class="max-w-3xl mx-auto text-center px-4">
-      <h3 class="text-xl font-semibold font-playfair text-white">Aligned with Emerging National Financial Standards</h3>
-      <p class="mt-2 text-white/70">Pioneered by Brock Pierce</p>
-    </div>
+  <section id="trust">
+    <h2 class="font-playfair text-2xl md:text-4xl text-white text-center mb-2">Trust</h2>
+    <p class="text-center text-white/70">Aligned with Emerging National Financial Standards</p>
+    <p class="text-center text-white/70">Pioneered by Brock Pierce</p>
   </section>
 
-  <!-- Call To Action -->
-  <section class="bg-transparent py-16" id="cta">
-    <div class="max-w-xl mx-auto text-center px-4">
-      <h2 id="typed-cta" class="section-title font-playfair text-2xl md:text-4xl text-white">Join the future of decentralized money movement.</h2>
-      <div class="mt-6 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-        <a href="#" class="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold transition transform hover:scale-105 hover:bg-blue-700">Request Early Access</a>
-        <a href="#about" class="px-6 py-3 border border-blue-500 text-blue-500 rounded-md font-semibold transition transform hover:scale-105 hover:bg-blue-500 hover:text-white">Contact Us</a>
-      </div>
+  <section id="cta">
+    <h2 class="font-playfair text-2xl md:text-4xl text-white text-center mb-6">Join the future of decentralized money movement.</h2>
+    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+      <a href="#" class="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold transition transform hover:scale-105 hover:bg-blue-700">Request Early Access</a>
+      <a href="#" class="px-6 py-3 border border-blue-500 text-blue-500 rounded-md font-semibold transition transform hover:scale-105 hover:bg-blue-500 hover:text-white">Contact Us</a>
     </div>
   </section>
+</main>
 
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-transparent py-8 text-center text-sm text-gray-400">
-    <div class="space-x-4 mb-4">
-      <a href="#how" class="text-gray-400 hover:text-white hover:underline">Nav</a>
-      <a href="#" class="text-gray-400 hover:text-white hover:underline">Legal</a>
-      <a href="#" class="text-gray-400 hover:text-white hover:underline">Social</a>
-    </div>
-    <p>&copy; 2025 HawalaBit</p>
-  </footer>
+<footer class="py-8 text-center text-sm text-gray-400">
+  <div class="space-x-4 mb-4">
+    <a href="#how" class="text-gray-400 hover:text-white hover:underline">Nav</a>
+    <a href="#" class="text-gray-400 hover:text-white hover:underline">Legal</a>
+    <a href="#" class="text-gray-400 hover:text-white hover:underline">Social</a>
+  </div>
+  <p>&copy; 2025 HawalaBit</p>
+</footer>
 </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const heroOptions = {
-  strings: [
-    "Global Money.",
-    "Human Trust.",
-    "Instant Access."
-  ],
-  typeSpeed: 50,
-  backSpeed: 20,
-  backDelay: 1000,
-  startDelay: 500,
-  loop: true // ✅ Changed from false to true for continuous animation
-};
-      document.getElementById("typed-hero").textContent = "";
-      new Typed("#typed-hero", heroOptions);
-
-      const observeTyped = (id) => {
-        const el = document.getElementById(id);
-        if (!el || el.dataset.typedDone) return;
-        const text = el.textContent;
-        el.textContent = '';
-        const observer = new IntersectionObserver((entries, obs) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting && !el.dataset.typedDone) {
-              new Typed(`#${id}`, {
-                strings: [text],
-                typeSpeed: 50,
-                showCursor: false
-              });
-              el.dataset.typedDone = 'true';
-              obs.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.6 });
-        observer.observe(el);
-      };
-
-      observeTyped('typed-how');
-      observeTyped('typed-features');
-      observeTyped('typed-cta');
-
-      const toggle = document.getElementById('nav-toggle');
-      const body = document.body;
-      if (toggle) {
-        toggle.addEventListener('change', () => {
-          if (toggle.checked) {
-            body.classList.add('overflow-hidden');
-          } else {
-            body.classList.remove('overflow-hidden');
-          }
-        });
-      }
-
-      document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', () => {
-          toggle.checked = false;
-          body.classList.remove('overflow-hidden');
-        });
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          toggle.checked = false;
-          body.classList.remove('overflow-hidden');
-        }
-      });
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Typed("#typed-hero", {
+      strings: ["Global Money.", "Human Trust.", "Instant Access."],
+      typeSpeed: 50,
+      backSpeed: 20,
+      backDelay: 1000,
+      startDelay: 500,
+      loop: true
     });
-  </script>
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script type="text/babel" data-presets="react,typescript">
-    const InteractiveGridPattern = ({ size = 40, squares = [30, 30] }) => {
-      const [hovered, setHovered] = React.useState(null);
-      const [horizontal, vertical] = squares;
-
-      return (
-        <svg
-          width="100%"
-          height="100%"
-          viewBox={`0 0 ${size * horizontal} ${size * vertical}`}
-          preserveAspectRatio="xMidYMid slice"
-          className="pointer-events-none absolute inset-0 z-0 hidden md:block w-full h-[200%] inset-y-[-30%] skew-y-12 [mask-image:radial-gradient(400px_circle_at_center,white,transparent)]"
-        >
-          {Array.from({ length: horizontal * vertical }).map((_, index) => {
-            const x = (index % horizontal) * size;
-            const y = Math.floor(index / horizontal) * size;
-            return (
-              <rect
-                key={index}
-                x={x}
-                y={y}
-                width={size}
-                height={size}
-                className={
-                  "stroke-white/10 transition-all duration-100 ease-in-out " +
-                  (hovered === index ? "fill-purple-500/10" : "fill-purple-500/5")
-                }
-                onMouseEnter={() => setHovered(index)}
-                onMouseLeave={() => setHovered(null)}
-              />
-            );
-          })}
-        </svg>
-      );
-    };
-  </script>
-  <script type="text/babel" data-presets="react,typescript">
+  });
+</script>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel" data-presets="react,typescript">
+  const InteractiveGridPattern = ({ size = 40, squares = [30, 30] }) => {
+    const [hovered, setHovered] = React.useState(null);
+    const [horizontal, vertical] = squares;
+    return (
+      <svg
+        width="100%"
+        height="100%"
+        viewBox={`0 0 ${size * horizontal} ${size * vertical}`}
+        preserveAspectRatio="xMidYMid slice"
+        className="pointer-events-none absolute inset-0 z-0 hidden md:block w-full h-[200%] inset-y-[-30%] skew-y-12 [mask-image:radial-gradient(400px_circle_at_center,white,transparent)]"
+      >
+        {Array.from({ length: horizontal * vertical }).map((_, index) => {
+          const x = (index % horizontal) * size;
+          const y = Math.floor(index / horizontal) * size;
+          return (
+            <rect
+              key={index}
+              x={x}
+              y={y}
+              width={size}
+              height={size}
+              className={
+                "stroke-blue-500/20 transition-all duration-100 ease-in-out " +
+                (hovered === index ? "fill-blue-500/20" : "fill-blue-500/10")
+              }
+              onMouseEnter={() => setHovered(index)}
+              onMouseLeave={() => setHovered(null)}
+            />
+          );
+        })}
+      </svg>
+    );
+  };
+</script>
+<script type="text/babel" data-presets="react,typescript">
   window.addEventListener("load", function () {
     const mount = () => {
       const rootEl = document.getElementById("grid-root");
@@ -281,7 +176,6 @@
         rootEl._reactRoot = null;
       }
     };
-
     mount();
     window.addEventListener("resize", mount);
   });
