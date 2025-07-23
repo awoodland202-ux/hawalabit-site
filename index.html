@@ -37,11 +37,11 @@
   </div>
 <div class="relative z-10">
   <!-- Header (more transparent for grid visibility) -->
+  <input type="checkbox" id="nav-toggle" class="peer hidden" />
 <header class="w-full sticky top-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 py-4 md:py-6">
         <img src="assets/hawalabit-logo.svg" alt="HawalaBit Logo" class="h-10 w-auto" />
 
-    <input type="checkbox" id="nav-toggle" class="peer hidden" />
     <label for="nav-toggle" class="md:hidden cursor-pointer" aria-label="Toggle navigation">
       <svg class="h-6 w-6 text-white peer-checked:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -51,7 +51,10 @@
       </svg>
     </label>
 
-<nav class="fixed inset-0 z-50 bg-[#0c0c0c] text-white hidden peer-checked:flex flex-col md:hidden">
+  </div>
+</header>
+
+<nav class="fixed inset-0 z-[999] bg-[#0c0c0c] text-white hidden peer-checked:flex flex-col md:hidden">
   <img src="assets/hawalabit-logo.svg" alt="HawalaBit Logo" class="absolute top-6 left-6 h-8 w-auto md:hidden" />
   <label for="nav-toggle" class="absolute top-6 right-6 text-white text-3xl cursor-pointer md:hidden">&times;</label>
 
@@ -65,8 +68,6 @@
     <a href="#cta" class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:brightness-110 transition-all duration-300 delay-[200ms]">Request Access</a>
   </div>
 </nav>
-  </div>
-</header>
 
 
   <main class="relative z-10">
