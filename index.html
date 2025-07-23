@@ -144,18 +144,18 @@
           const y = Math.floor(index / horizontal) * size;
           return (
             <rect
-              key={index}
-              x={x}
-              y={y}
-              width={size}
-              height={size}
-              className={
-                "stroke-white/50 drop-shadow-md transition-all duration-100 ease-in-out " +
-                (hovered === index ? "fill-blue-500/90" : "fill-blue-500/60")
-              }
-              onMouseEnter={() => setHovered(index)}
-              onMouseLeave={() => setHovered(null)}
-            />
+  key={index}
+  x={x}
+  y={y}
+  width={size}
+  height={size}
+  fill={hovered === index ? "#3B82F6" : "#60A5FA"} // blue-500 on hover, blue-400 default
+  stroke="#FFFFFF"
+  strokeOpacity="0.5"
+  className="transition-all duration-200 ease-in-out"
+  onMouseEnter={() => setHovered(index)}
+  onMouseLeave={() => setHovered(null)}
+/>
           );
         })}
       </svg>
