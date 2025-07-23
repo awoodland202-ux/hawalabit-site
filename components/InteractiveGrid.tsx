@@ -24,7 +24,9 @@ export function InteractiveGridPattern({
   height="100%"
   viewBox={`0 0 ${width * horizontal} ${height * vertical}`}
   preserveAspectRatio="xMidYMid slice"
-  className="w-full h-full pointer-events-none"
+  className={`w-full h-full pointer-events-none ${className}`}
+  role="presentation"
+  aria-hidden="true"
 >
       {Array.from({ length: horizontal * vertical }).map((_, index) => {
         const x = (index % horizontal) * width;
