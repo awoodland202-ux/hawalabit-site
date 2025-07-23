@@ -51,19 +51,20 @@
       </svg>
     </label>
 
-    <nav class="fixed inset-0 z-50 bg-[#0c0c0c] text-white hidden peer-checked:flex flex-col md:flex md:static md:flex-row md:bg-transparent md:relative md:space-x-8">
-      <img src="assets/hawalabit-logo.svg" alt="HawalaBit Logo" class="absolute top-6 left-6 h-8 w-auto md:hidden" />
-      <label for="nav-toggle" class="absolute top-6 right-6 text-white text-3xl cursor-pointer md:hidden">&times;</label>
-      <div class="flex flex-col items-center justify-start pt-[33vh] space-y-6 text-2xl md:flex-row md:pt-0 md:space-y-0 md:text-base md:flex-none">
-        <a href="#how" class="block px-4 md:px-0 py-2 hover:text-blue-400 hover:drop-shadow-md transition-all duration-300 delay-[50ms]">How It Works</a>
-        <a href="#about" class="block px-4 md:px-0 py-2 hover:text-blue-400 hover:drop-shadow-md transition-all duration-300 delay-[100ms]">About</a>
-        <a href="#cta" class="block px-4 md:px-0 py-2 hover:text-blue-400 hover:drop-shadow-md transition-all duration-300 delay-[150ms]">Get Started</a>
-        <a href="#cta" class="hidden md:block px-4 md:px-0 py-2 font-semibold hover:text-blue-400 hover:drop-shadow-md transition duration-200">Request Early Access</a>
-      </div>
-      <div class="mt-auto pb-8 px-6 flex justify-center md:hidden">
-        <a href="#cta" class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:brightness-110 transition-all duration-300 delay-[200ms]">Request Access</a>
-      </div>
-    </nav>
+<nav class="fixed inset-0 z-50 bg-[#0c0c0c] text-white hidden peer-checked:flex flex-col md:hidden">
+  <img src="assets/hawalabit-logo.svg" alt="HawalaBit Logo" class="absolute top-6 left-6 h-8 w-auto md:hidden" />
+  <label for="nav-toggle" class="absolute top-6 right-6 text-white text-3xl cursor-pointer md:hidden">&times;</label>
+
+  <div class="flex flex-col items-center justify-start pt-[33vh] space-y-6 text-2xl">
+    <a href="#how" class="transition-all duration-300 delay-[50ms]">How</a>
+    <a href="#about" class="transition-all duration-300 delay-[100ms]">About</a>
+    <a href="#cta" class="transition-all duration-300 delay-[150ms]">Start</a>
+  </div>
+
+  <div class="mt-auto pb-8 px-6 flex justify-center">
+    <a href="#cta" class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:brightness-110 transition-all duration-300 delay-[200ms]">Request Access</a>
+  </div>
+</nav>
   </div>
 </header>
 
