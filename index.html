@@ -43,16 +43,26 @@
 
     <input type="checkbox" id="nav-toggle" class="peer hidden" />
     <label for="nav-toggle" class="md:hidden cursor-pointer" aria-label="Toggle navigation">
-      <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <svg class="h-6 w-6 text-white peer-checked:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg class="h-6 w-6 text-white hidden peer-checked:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </label>
 
-    <nav class="flex flex-col md:flex-row absolute top-full left-0 w-full bg-[#0c0c0c] md:static md:bg-transparent z-40 border-t md:border-0 space-y-2 md:space-y-0 md:space-x-8 py-4 md:py-0 text-base transition-all duration-300 overflow-hidden max-h-0 opacity-0 peer-checked:max-h-96 peer-checked:opacity-100 md:max-h-none md:opacity-100">
-      <a href="#how" class="block px-4 md:px-0 py-2 text-white hover:text-blue-400 hover:drop-shadow-md transition duration-200">How It Works</a>
-      <a href="#about" class="block px-4 md:px-0 py-2 text-white hover:text-blue-400 hover:drop-shadow-md transition duration-200">About</a>
-      <a href="#cta" class="block px-4 md:px-0 py-2 text-white hover:text-blue-400 hover:drop-shadow-md transition duration-200">Get Started</a>
-      <a href="#cta" class="block px-4 md:px-0 py-2 text-white font-semibold hover:text-blue-400 hover:drop-shadow-md transition duration-200">Request Early Access</a>
+    <nav class="fixed inset-0 z-50 bg-[#0c0c0c] text-white hidden peer-checked:flex flex-col md:flex md:static md:flex-row md:bg-transparent md:relative md:space-x-8">
+      <img src="assets/hawalabit-logo.svg" alt="HawalaBit Logo" class="absolute top-6 left-6 h-8 w-auto md:hidden" />
+      <label for="nav-toggle" class="absolute top-6 right-6 text-white text-3xl cursor-pointer md:hidden">&times;</label>
+      <div class="flex flex-col items-center justify-start pt-[33vh] space-y-6 text-2xl md:flex-row md:pt-0 md:space-y-0 md:text-base md:flex-none">
+        <a href="#how" class="block px-4 md:px-0 py-2 hover:text-blue-400 hover:drop-shadow-md transition-all duration-300 delay-[50ms]">How It Works</a>
+        <a href="#about" class="block px-4 md:px-0 py-2 hover:text-blue-400 hover:drop-shadow-md transition-all duration-300 delay-[100ms]">About</a>
+        <a href="#cta" class="block px-4 md:px-0 py-2 hover:text-blue-400 hover:drop-shadow-md transition-all duration-300 delay-[150ms]">Get Started</a>
+        <a href="#cta" class="hidden md:block px-4 md:px-0 py-2 font-semibold hover:text-blue-400 hover:drop-shadow-md transition duration-200">Request Early Access</a>
+      </div>
+      <div class="mt-auto pb-8 px-6 flex justify-center md:hidden">
+        <a href="#cta" class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:brightness-110 transition-all duration-300 delay-[200ms]">Request Access</a>
+      </div>
     </nav>
   </div>
 </header>
@@ -190,6 +200,32 @@
       observeTyped('typed-how');
       observeTyped('typed-features');
       observeTyped('typed-cta');
+
+      const toggle = document.getElementById('nav-toggle');
+      const body = document.body;
+      if (toggle) {
+        toggle.addEventListener('change', () => {
+          if (toggle.checked) {
+            body.classList.add('overflow-hidden');
+          } else {
+            body.classList.remove('overflow-hidden');
+          }
+        });
+      }
+
+      document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          toggle.checked = false;
+          body.classList.remove('overflow-hidden');
+        });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          toggle.checked = false;
+          body.classList.remove('overflow-hidden');
+        }
+      });
     });
   </script>
 </body>
