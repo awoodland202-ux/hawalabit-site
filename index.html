@@ -146,31 +146,32 @@
       >
         <g transform="skewY(8)">
           {Array.from({ length: horizontal * vertical }).map((_, index) => {
-            const x = (index % horizontal) * size;
-            const y = Math.floor(index / horizontal) * size;
-            return (
-              <rect
-                key={index}
-                x={x}
-                y={y}
-                width={size}
-                height={size}
-                fill="transparent"
-                stroke="#3B82F6"
-                strokeWidth="1"
-                strokeOpacity="0.15"
-              >
-                <animate
-                  attributeName="opacity"
-                  values="0.05;0.15;0.05"
-                  dur="4s"
-                  begin={`${Math.random() * 2}s`}
-dur={`${3 + Math.random() * 2}s`}
-                  repeatCount="indefinite"
-                />
-              </rect>
-            );
-          })}
+  const x = (index % horizontal) * size;
+  const y = Math.floor(index / horizontal) * size;
+  const delay = (Math.random() * 2).toFixed(2);
+  const duration = (3 + Math.random() * 2).toFixed(2);
+  return (
+    <rect
+      key={index}
+      x={x}
+      y={y}
+      width={size}
+      height={size}
+      fill="transparent"
+      stroke="#3B82F6"
+      strokeWidth="1"
+      strokeOpacity="0.15"
+    >
+      <animate
+        attributeName="opacity"
+        values="0.05;0.15;0.05"
+        dur={`${duration}s`}
+        begin={`${delay}s`}
+        repeatCount="indefinite"
+      />
+    </rect>
+  );
+})}
         </g>
       </svg>
     );
