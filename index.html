@@ -124,7 +124,7 @@
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
+  
 <script type="text/babel" data-presets="react,typescript">
   const InteractiveGridPattern = ({ size = 40, squares = [30, 30] }) => {
     const [horizontal, vertical] = squares;
@@ -137,8 +137,8 @@
         preserveAspectRatio="xMidYMid slice"
         style={{
           pointerEvents: "none",
-          maskImage: "radial-gradient(500px circle at center, white, transparent)",
-          WebkitMaskImage: "radial-gradient(500px circle at center, white, transparent)",
+          maskImage: "radial-gradient(1000px circle at center, white, transparent)",
+          WebkitMaskImage: "radial-gradient(1000px circle at center, white, transparent)",
         }}
         className="absolute skew-y-12 inset-x-0 -inset-y-[30%] h-[200%] w-full"
         role="presentation"
@@ -146,32 +146,32 @@
       >
         <g transform="skewY(8)">
           {Array.from({ length: horizontal * vertical }).map((_, index) => {
-  const x = (index % horizontal) * size;
-  const y = Math.floor(index / horizontal) * size;
-  const delay = (Math.random() * 2).toFixed(2);
-  const duration = (3 + Math.random() * 2).toFixed(2);
-  return (
-    <rect
-      key={index}
-      x={x}
-      y={y}
-      width={size}
-      height={size}
-      fill="transparent"
-      stroke="#3B82F6"
-      strokeWidth="1"
-      strokeOpacity="0.15"
-    >
-      <animate
-        attributeName="opacity"
-        values="0.05;0.15;0.05"
-        dur={`${duration}s`}
-        begin={`${delay}s`}
-        repeatCount="indefinite"
-      />
-    </rect>
-  );
-})}
+            const x = (index % horizontal) * size;
+            const y = Math.floor(index / horizontal) * size;
+            const delay = (Math.random() * 2).toFixed(2);
+            const duration = (3 + Math.random() * 3).toFixed(2); // Vary duration from 3s to 6s
+            return (
+              <rect
+                key={index}
+                x={x}
+                y={y}
+                width={size}
+                height={size}
+                fill="transparent"
+                stroke="#3B82F6"
+                strokeWidth="1"
+                strokeOpacity="0.3"
+              >
+                <animate
+                  attributeName="opacity"
+                  values="0.1;0.4;0.1"
+                  dur={`${duration}s`}
+                  begin={`${delay}s`}
+                  repeatCount="indefinite"
+                />
+              </rect>
+            );
+          })}
         </g>
       </svg>
     );
