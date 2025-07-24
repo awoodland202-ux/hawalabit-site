@@ -27,17 +27,19 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main className="relative bg-[#0c0c0c] text-white antialiased text-base leading-relaxed">
-  {/* Grid background */}
-  <div className="absolute inset-0 z-0 hidden md:block pointer-events-none">
-    <AnimatedGridPattern
-      numSquares={30}
-      maxOpacity={0.1}
-      duration={3}
-      repeatDelay={1}
-      className="inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
-    />
-  </div>
+    <main className="relative bg-[#0c0c0c] text-white antialiased text-base leading-relaxed overflow-x-hidden">
+      {/* Grid background */}
+      <div className="absolute inset-0 z-0 hidden md:block pointer-events-none overflow-hidden">
+        <div className="inset-x-0 inset-y-[-20%] h-[150%] skew-y-6">
+          <AnimatedGridPattern
+            numSquares={25}
+            maxOpacity={0.1}
+            duration={3}
+            repeatDelay={1}
+          />
+        </div>
+      </div>
+
       <div className="relative z-10">
         {/* Header */}
         <input type="checkbox" id="nav-toggle" className="peer hidden" />
