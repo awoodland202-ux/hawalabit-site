@@ -149,7 +149,8 @@
             const x = (index % horizontal) * size;
             const y = Math.floor(index / horizontal) * size;
             const delay = (Math.random() * 2).toFixed(2);
-            const duration = (3 + Math.random() * 3).toFixed(2); // 3–6s
+        const duration = (6 + Math.random() * 4).toFixed(2); // 6–10s
+
             return (
               <rect
                 key={index}
@@ -164,7 +165,7 @@
               >
                 <animate
                   attributeName="fill"
-                  values="transparent;#3B82F6;transparent"
+                  values="transparent;rgba(59,130,246,0.08);transparent"
                   dur={`${duration}s`}
                   begin={`${delay}s`}
                   repeatCount="indefinite"
