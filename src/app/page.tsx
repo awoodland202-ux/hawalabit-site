@@ -139,7 +139,7 @@ export default function HomePage() {
             </div>
             <div data-aos="fade-up" data-aos-delay="400">
               <strong>Trust Built In</strong><br />
-              HawalaBit is designed to feel familiar, fast, and safe — even if you've never used a digital wallet before.
+              HawalaBit is designed to feel familiar, fast, and safe — even if you&apos;ve never used a digital wallet before.
             </div>
           </div>
         </section>
